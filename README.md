@@ -1,18 +1,54 @@
-# Salesforce DX Project: Next Steps
+# Salesforce LWC Components: TaskManager & WeatherInfo
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Overview
+This repository contains two Salesforce Lightning Web Components (LWC):
 
-## How Do You Plan to Deploy Your Changes?
+1. **TaskManager**: A component for managing tasks.
+2. **WeatherInfo**: A component that retrieves and displays real-time weather data.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Features
 
-## Configure Your Salesforce DX Project
+### TaskManager
+- View, mark, and create tasks.
+- SLDS-styled for consistent UI.
+  
+### WeatherInfo
+- Fetches weather data using the OpenWeather API.
+- Displays real-time temperature and conditions.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Installation
+1. Clone the repository:
+   
+   git clone git-username@github.com:rk-deve/sf-task-oct24.git 
 
-## Read All About It
+2. Navigate to your project directory:
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+    cd <your_project_directory>
+
+3. Authorize your Salesforce Org:
+
+    sfdx auth:web:login
+
+4. Deploy the code:
+
+    sfdx force:source:deploy -p force-app
+
+5. Manual step for Weather Display 
+
+   Goto the 'Sales' App in Salesforce, Create Tab for Location__c 
+   Add some test data 
+   Name : London 
+   Latitude: 51.50986500
+   Longitude: -0.11809200
+
+   Edit Location__c page, drop the component - weatherDisplay 
+
+6. Manual step for taskManager 
+
+   If you don't have a custom home page, goto Lightning App Builder
+   Create a App Home Page and set it as org-default
+   Edit page and drop - taskManager 
+
+   the task can be marked complete by clicking the + sign 
+   the tasks that are complete have tick sign (disabled)
+   To create a new task - use the button 
