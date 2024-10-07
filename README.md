@@ -35,20 +35,31 @@ This repository contains two Salesforce Lightning Web Components (LWC):
 
 5. Manual step for Weather Display 
 
-   Goto the 'Sales' App in Salesforce, Create Tab for Location__c 
+   Goto the 'Sales' App in Salesforce, Create Tab for Location__c
+   
    Add some test data 
+
    Name : London 
+
    Latitude: 51.50986500
+
    Longitude: -0.11809200
 
    Edit Location__c page, drop the component - weatherDisplay 
 
-6. Manual step for taskManager 
+
+7. Manual step for taskManager 
 
    If you don't have a custom home page, goto Lightning App Builder
+
    Create a App Home Page and set it as org-default
+
    Edit page and drop - taskManager 
 
    the task can be marked complete by clicking the + sign 
+
    the tasks that are complete have tick sign (disabled)
+
    To create a new task - use the button 
+
+
