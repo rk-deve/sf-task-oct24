@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="My Tasks">
+        <lightning-button label="New Task" onclick={handleNewTask}></lightning-button>
+
+        <!-- Register onrowaction to handle Mark Complete button clicks -->
+        <lightning-datatable
+            data={tasks}
+            columns={columns}
+            key-field="Id"
+            onrowaction={handleRowAction}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+    </lightning-card>
+
+    <template if:true={showNewTaskForm}>
+        <lightning-card title="Create New Task" class="slds-p-around_large" style="background-color: #f4f6f9;">
+            <div class="slds-p-around_large">
+                <lightning-input label="Subject" value={newTaskSubject} onchange={handleInputChange}></lightning-input>
+                <lightning-input label="Due Date" type="date" value={newTaskDueDate} onchange={handleInputChange} aria-setsize="6"></lightning-input>
+                <lightning-combobox label="Priority" options={priorityOptions} value={newTaskPriority} onchange={handleInputChange}></lightning-combobox>
+                <lightning-button label="Save Task" onclick={saveTask} class="slds-float_right"></lightning-button>
+            </div>
+        </lightning-card>
+    </template>
+</template>
